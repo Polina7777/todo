@@ -1,0 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
+h1,h1,h3,h3,h5,p,span {
+  margin: 0;
+}
+
+

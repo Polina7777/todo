@@ -1,0 +1,54 @@
+input {
+    border: 1px solid  #aaaa;
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid  #dedbdbaa;
+    width: 100%;
+    text-align: start;
+    font-weight: 600;
+    font-size: 11px;
+    color: #cacdd2;
+}
+This answer is not useful
+Placeholder does not work in input time, but you can do the same functionality as placeholder by this
+
+input[type="time"] {
+    background: #fff;
+   
+}
+
+input[placeholder='Start time']:before {
+    content: 'Start time';
+    color: #9d9d9dc8;
+    position: absolute;
+    background: #fff;
+
+}
+input[placeholder='End time']:before {
+    content: 'End time';
+    color: #9d9d9dc8;
+    position: absolute;
+    background: #fff;
+   
+}
+input[type="time"]:focus:before {
+    width: 0;
+    content: '';
+
+}
+input:focus {
+    outline:none;
+    color:  #aaaa;
+    }
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #bfc1c4;
+ }
+ :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #bfc1c4;
+ }
+ ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #bfc1c4;
+ }
+ :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #bfc1c4;
+ }
