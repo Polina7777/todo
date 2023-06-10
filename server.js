@@ -22,14 +22,16 @@ app.get('/callback', require('./endpoints/oauth/callback'));
 app.delete('/callback', require('./endpoints/oauth/uninstall'));
 
 // Panel handlers
- app.get('/', jwtCheck(config.surfaceJwt), require('./endpoints/surface-render'));
+ app.all('/', jwtCheck(config.surfaceJwt), require('./endpoints/surface-render'));
 
 // Debug endpoints
 // app.get('/pipedrive-api-example/:userId/:companyId', require('./endpoints/oauth/api-example'));
 // app.get('/db', require('./endpoints/db'));
 
 // Surface endpoints
-// app.use('/todo/:userId/:companyId/:dealId', jwtCheck(config.surfaceJwt));
+ app.use('/todo/:userId/:companyId/:dealId', jwtCheck(config.surfaceJwt));
+ // app.post('/todo/:userId/:companyId/:dealId', jwtCheck(config.surfaceJwt))
+//  app.post('/todo/:userId/:companyId/:dealId', require('./endpoints/add-deal'))
 // app.get('/todo/:userId/:companyId/:dealId', require('./endpoints/get-todo'));
 // app.get('/todo/:userId/:companyId/:dealId/:recordId', require('./endpoints/get-todo'));
 // app.post('/todo/:userId/:companyId/:dealId', require('./endpoints/create-todo'));
